@@ -23,17 +23,17 @@ class UserController extends Controller
     }
     public function create(Request $request)
     {
-        $author = User::create($request->all());
+        $user = User::create($request->all());
 
-        return response()->json($author, 201);
+        return response()->json($user, 201);
     }
 
     public function update($id, Request $request)
     {
-        $author = User::findOrFail($id);
-        $author->update($request->all());
+        $user = User::findOrFail($id);
+        $user->update($request->all());
 
-        return response()->json($author, 200);
+        return response()->json($user, 200);
     }
 
     public function delete($id)

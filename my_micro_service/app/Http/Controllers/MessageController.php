@@ -13,23 +13,27 @@ class MessageController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function show($id)
+    public function showOne($id)
     {
-        return Message::findOrFail($id);
+        return response()->json(Message::find($id));
+    }
+    public function showAll()
+    {
+        return Message::all();
     }
     public function create(Request $request)
     {
-        $author = Message::create($request->all());
+        $message = Message::create($request->all());
 
-        return response()->json($author, 201);
+        return response()->json($message, 201);
     }
 
     public function update($id, Request $request)
     {
-        $author = Message::findOrFail($id);
-        $author->update($request->all());
+        $message = Message::findOrFail($id);
+        $message->update($request->all());
 
-        return response()->json($author, 200);
+        return response()->json($message, 200);
     }
 
     public function delete($id)

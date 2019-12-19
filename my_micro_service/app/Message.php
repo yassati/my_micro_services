@@ -2,10 +2,10 @@
 use Illuminate\Database\Eloquent\Model;
 
 class Message extends Model {
-    protected $table = ‘Message’;
+    protected $table = "Message";
     protected $fillable = [
-        ‘message’,
-        ‘id_sender’,
-        ‘id_receiver’
+        "message",
+        "id_sender",
+        "id_receiver"
     ];
 }

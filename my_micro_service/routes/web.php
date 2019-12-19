@@ -21,8 +21,12 @@ $router->get('user', 'UserController@showAll');
 $router->post('user', 'UserController@create');
 $router->delete('user/{id}', 'UserController@delete');
 $router->put('user/{id}', 'UserController@update');
-
+$router->post('register', 'AuthController@register');
 
 //routes message
-$router->get('message/{id}', 'MessageController@show');
+$router->get('message/{id}', 'Message@showOne');
+$router->get('message', 'MessageController@showAll');
+$router->post('message', 'MessageController@create');
+$router->delete('message/{id}', 'MessageController@delete');
+$router->put('message/{id}', 'MessageController@update');
 
