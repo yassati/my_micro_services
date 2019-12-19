@@ -14,3 +14,15 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+//routes user
+$router->get('user/{id}', 'UserController@showOne');
+$router->get('user', 'UserController@showAll');
+$router->post('user', 'UserController@create');
+$router->delete('user/{id}', 'UserController@delete');
+$router->put('user/{id}', 'UserController@update');
+
+
+//routes message
+$router->get('message/{id}', 'MessageController@show');
+
