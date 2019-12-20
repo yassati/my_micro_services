@@ -25,7 +25,7 @@ $router->post('register', 'AuthController@register');
 $router->post('login', 'AuthController@login');
 
 //routes message
-$router->get('message/{id}', 'Message@showOne');
+$router->get('message/{id}', 'MessageController@showOne');
 $router->get('message', 'MessageController@showAll');
 $router->post('message', 'MessageController@create');
 $router->delete('message/{id}', 'MessageController@delete');

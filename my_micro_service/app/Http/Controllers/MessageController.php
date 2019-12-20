@@ -4,22 +4,35 @@ namespace App\Http\Controllers;
 
 use App\Message;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class MessageController extends Controller
 {
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Retrieve the user for the given ID.
      *
      * @param  int  $id
      * @return Response
      */
-    public function showOne($id)
-    {
-        return response()->json(Message::find($id));
-    }
+    
     public function showAll()
     {
         return Message::all();
+    }
+    public function showOne($id)
+    {
+        $message = Message::find($id);
+        return response($message);
     }
     public function create(Request $request)
     {
