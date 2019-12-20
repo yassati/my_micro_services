@@ -5,9 +5,9 @@ use Illuminate\Http\Request;
 use  App\User;
 use Illuminate\Support\Facades\Auth;
 
-
 class AuthController extends Controller
 {
+    
     /**
      * Store a new user.
      *
